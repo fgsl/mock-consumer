@@ -63,7 +63,6 @@ class LoggerListener(stomp.ConnectionListener):
         else:
             print('ERROR: when tried to read messages')
     def on_message(self, frame, args):
-        podips_host = getPodipsHost();
         if hasattr(frame,'body'):
             message = frame.body
         else:
