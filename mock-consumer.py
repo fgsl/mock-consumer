@@ -67,10 +67,10 @@ class LoggerListener(stomp.ConnectionListener):
             message = frame.body
         else:
             message = args
-        print('PODIPS-WRITER: received a message "%s"' % message)
+        print('MOCK-CONSUMER: received a message "%s"' % message)
         try:
             log = json.loads(message)
-            print("PODIPS-WRITER: message loaded as JSON")
+            print("MOCK-CONSUMER: message loaded as JSON")
         except Exception as e:
             print("ERROR: could not send log...:",e);
 
