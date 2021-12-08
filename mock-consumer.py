@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-# coding: utf-8 ===========================================================================
+# coding: utf-8 
+# ==========================================================================================
 # mock-consumer: A program that reads logs from a queue and pretends to send to a server log 
 # @author Flávio Gomes da Silva Lisboa <flavio.lisboa@fgsl.eti.br>
 # @license LGPL-2.1
-# ===========================================================================
+# ==========================================================================================
 from fluent import sender
 import json
 import os
