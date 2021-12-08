@@ -11,7 +11,7 @@ import stomp
 import time
 
 # connection to ActiveMQ
-def get_queue():
+def getQueue():
     print("Loading queue configuration...")
     try:
         with open("queue.config.json", "r") as f:
@@ -81,7 +81,7 @@ time.sleep(10)
 
 while True:
     try:
-        queue = get_queue();
+        queue = getQueue();
         print("Waiting for messages...")
         time.sleep(60)
         queue.disconnect();
