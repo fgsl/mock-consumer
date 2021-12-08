@@ -7,13 +7,11 @@
 from fluent import sender
 import json
 import os
-import requests
-import socket
 import stomp
 import time
 
 # connection to ActiveMQ
-def getQueue():
+def get_queue():
     print("Loading queue configuration...")
     try:
         with open("queue.config.json", "r") as f:
@@ -85,7 +83,7 @@ time.sleep(10)
 
 while True:
     try:
-        queue = getQueue();
+        queue = get_queue();
         print("Waiting for messages...")
         time.sleep(60)
         queue.disconnect();
