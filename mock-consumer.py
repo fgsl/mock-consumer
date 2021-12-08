@@ -55,19 +55,17 @@ def get_queue():
     return queue  
   
 class LoggerListener(stomp.ConnectionListener):
-    def on_error(self, frame, args):
+    def on_error(self, frame):
         if hasattr(frame, 'body'):
             print('ERROR: received an error "%s"' % frame.body)
         else:
             print('ERROR: when tried to read messages')
-    def on_message(self, frame, args):
+    def on_message(self, frame):
         if hasattr(frame,'body'):
             message = frame.body
-        else:
-            message = args
         print('MOCK-CONSUMER: received a message "%s"' % message)
         try:
-            log = json.loads(message)
+            json.loads(message)
             print("MOCK-CONSUMER: message loaded as JSON")
         except Exception as e:
             print("ERROR: could not send log...:",e);
